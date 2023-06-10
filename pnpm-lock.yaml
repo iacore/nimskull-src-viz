@@ -11,6 +11,9 @@ dependencies:
   three:
     specifier: ^0.153.0
     version: 0.153.0
+  three-forcegraph:
+    specifier: ^1.41.9
+    version: 1.41.9(three@0.153.0)
   three-spritetext:
     specifier: ^1.8.1
     version: 1.8.1(three@0.153.0)
