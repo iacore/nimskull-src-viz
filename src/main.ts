@@ -5,16 +5,20 @@ import data from "./out.json"
 const appel = document.querySelector<HTMLDivElement>("#app")!
 import SpriteText from "three-spritetext"
 
-const myGraph = ForceGraph3D({
-  rendererConfig: {
-    linkDirectionalArrowLength: 100,
-    linkDirectionalArrowColor: "#ffffff",
-  },
-})
+import * as dat from "dat.gui"
+
+const gui = new dat.GUI()
+
+const options = {
+  arrowLength: 4,
+  arrowRelPos: 0.5,
+}
+
+const myGraph = ForceGraph3D()
 myGraph(appel)
   .graphData(data)
   .nodeAutoColorBy("group")
-  .nodeThreeObject((node: NodeObject & { id: string, color: string }) => {
+  .nodeThreeObject((node: NodeObject & { id: string; color: string }) => {
     const sprite = new SpriteText(node.id)
     sprite.color = node.color
     // sprite.material.depthWrite = false; // make sprite background transparent. only used with fully transparent background
@@ -24,3 +28,13 @@ myGraph(appel)
     sprite.textHeight = 8
     return sprite
   })
+  .linkDirectionalArrowLength(options.arrowLength)
+  .linkDirectionalArrowRelPos(options.arrowRelPos)
+// .linkDirectionalArrowColor("#ffffff")
+
+gui
+  .add(options, "arrowLength", 0, 10)
+  .onChange((value) => myGraph.linkDirectionalArrowLength(value))
+gui
+  .add(options, "arrowRelPos", 0, 1)
+  .onChange((value) => myGraph.linkDirectionalArrowRelPos(value))
