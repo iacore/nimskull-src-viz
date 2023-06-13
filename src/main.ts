@@ -34,7 +34,7 @@ myGraph(appel)
 
 gui
   .add(options, "arrowLength", 0, 10)
-  .onChange((value) => myGraph.linkDirectionalArrowLength(value))
+  .onChange((value: number) => myGraph.linkDirectionalArrowLength(value))
 gui
   .add(options, "arrowRelPos", 0, 1)
-  .onChange((value) => myGraph.linkDirectionalArrowRelPos(value))
+  .onChange((value: number) => myGraph.linkDirectionalArrowRelPos(value))

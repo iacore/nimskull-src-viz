@@ -22,6 +22,9 @@ dependencies:
     version: 1.8.1(three@0.153.0)
 
 devDependencies:
+  '@types/dat.gui':
+    specifier: ^0.7.10
+    version: 0.7.10
   typescript:
     specifier: ^5.0.2
     version: 5.1.3
@@ -250,6 +253,10 @@ packages:
   /@tweenjs/tween.js@20.0.3:
     resolution: {integrity: sha512-SYUe1UgY5HM05EB4+0B4arq2IPjvyzKXoklXKxSYrc2IFxGm1cBrqg5XbiB5uwbs0xY5j+rj986NAJMM0KZaUw==}
     dev: false
+
+  /@types/dat.gui@0.7.10:
+    resolution: {integrity: sha512-sLifoNrvs4lgJkAUZcTB28dbWy0AM05Yc0BzTqHheK0tRYRVsJHoFLocB5heDbb5amaFLEXna41GOM6IG06oqA==}
+    dev: true
 
   /accessor-fn@1.4.1:
     resolution: {integrity: sha512-P7yNKfmpuWLUwiRVk9RkRIPGjngemjZ7yANc0DL7otgDqEIWkEByMhShzfgQ5ZwCPEUmba4v1kOqCdGhpzY3ew==}
